@@ -39,7 +39,7 @@ dynamic: CFLAGS += -fPIC
 dynamic: $(DNAME)
 
 test_dynamic: $(DNAME)
-	$(CC) -L. -lft_malloc_x86_64_Darwindyn main.c -o dynamic
+	$(CC) -L. -lft_malloc_x86_64_Darwindyn -ldl main.c -o dynamic  
 
 $(DNAME): $(OBJS)
 	$(CC) $(CFLAGS) -dynamiclib -o $@ $^

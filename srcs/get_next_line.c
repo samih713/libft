@@ -15,6 +15,7 @@
  */
 #include "libft.h"
 #include <string.h>
+#include <stdio.h>
 
 static char	*shift_left(char **stash);
 static void	join(char **stash, char *buffer, int buffer_length);
@@ -26,6 +27,8 @@ char	*get_next_line(int fd)
 	int				read_return;
 	char			buffer[BUFFER_SIZE + 1];
 
+
+	// write(1,"hello->>\n", 10);
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
 		return (0);
 	if (!stash)
